@@ -1,0 +1,1 @@
+match (p:Person)-[rel:ACTED_IN]->(m:Movie{title:'The Matrix'}) return p, rel, m
