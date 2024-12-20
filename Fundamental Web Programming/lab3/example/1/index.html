@@ -1,0 +1,81 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<!-- & 1 -->
+    <!--^ a.1 -->
+    <!-- 
+    <h1 id="say"></h1>
+    <script>
+        let user = prompt("Hello, What's your name?", "Enter your name.");
+        document.getElementById("say").innerHTML = "Hello " + user;
+    </script> 
+    -->
+
+    <!--^ a.2 -->
+    <!-- 
+    <h1>Moo Deng's Daily Activities</h1>
+    <p id="p1">fefef</p> 
+    
+    <script>
+        let acts = ["Wakes up for a bath and waits for Mom to eat breakfast.",
+            "Walks around, showing off before heading to the water for a nap.",
+            "Takes a nap in the water.",
+            "Might get up for a stroll or a nap on land.",
+            "Naps on land.",
+            "Naps in the water again.",
+            "Mom gets out of the water for dinner while Moo Deng naps.",
+            "Mom eats grass while Moo Deng waits, occasionally running a bit, followed by a long nap until evening.",
+            "Plays with Mom in the water.",
+            "Drinks milk and playfully disturbs Mom.",
+            "Sleeps soundly for hours."];
+
+        // แสดงผลเป็น list
+
+        // การเขียน list in html
+        // <ul>
+        // <li>1</li>
+        // <li>2</li>
+        // </ul>
+
+
+        // let text = "<ul>";
+        let text = "<ol>";
+
+        for (let item of acts) {
+            text += "<li>" + item + "</li>";
+        }
+        // text += "</ul>";
+        text += "</ol>";
+        document.getElementById("p1").innerHTML = text;
+    </script> 
+    -->
+
+    <!--^ b -->
+    <img id="image1" src="http://10.0.15.21/lab/lab3/images/md1.png">
+    <img id="image2" src="http://10.0.15.21/lab/lab3/images/md2.png"> <br>
+    <button onclick="changeimg();">Change</button>
+
+    <style>
+        img {
+            border-radius: 60px;
+            border: 20px solid salmon;
+
+        }
+    </style>
+
+    <script>
+        // ตัวอย่าง function 
+        function changeimg() {
+            document.getElementById('image1').src = "http://10.0.15.21/lab/lab3/images/md2.png";
+            document.getElementById('image2').src = "http://10.0.15.21/lab/lab3/images/md1.png";
+        }
+    </script>
+</body>
+
+</html>
