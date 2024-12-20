@@ -1,0 +1,10 @@
+program Test6  
+    sub Any  
+        n = 0  
+    end sub  
+    sub MeToo intr 5   
+        writeln("Me too, me too!")  
+    end sub  
+    do  
+    loop 
+end  
