@@ -1,0 +1,132 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        input {
+            width: 100%;
+            font-size: 30px;
+        }
+
+        label {
+            font-size: 30px;
+            text-align: left;
+        }
+
+        .center {
+            /* border: 100000000px; */
+            border-style: solid;
+            border-color: black;
+            /* justify-items: center; */
+            justify-content: center;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
+            height: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="myForm">
+        <!-- <p> -->
+        <div class="center">
+
+            <div>
+                    <label for="ID">หมายเลขบัตรประชาชน</label>
+                    <input type="text" id="ID" name="ID">
+
+            </div>
+
+            <!-- <div>
+                <p>
+                    <label for="prefix">คำนำหน้านาม</label>
+                    <input type="text" name="prefix" id="prefix">
+                </p>
+            </div>
+    
+    
+    
+    
+    
+            <div>
+                <p>
+                    <label for="fName">ชื่อ</label>
+    
+                </p>
+                <input type="text" name="fName" id="fName">
+            </div>
+    
+            <div>
+                <p>
+                    <label for="lName">นามสกุล</label>
+                </p>
+                <input type="text" name="lName" id="lName">
+            </div>
+    
+            <div>
+                <p>
+                    <label for="address">ที่อยู่</label>
+                </p>
+                <input type="text" name="address" id="address">
+            </div>
+    
+            <div>
+                <p>
+                    <label for="sDistrict">ตำบล/แขวง</label>
+                </p>
+                <input type="text" name="sDistrict" id="sDistrict">
+            </div>
+    
+            <div>
+                <p>
+                    <label for="district">อำเภอ/เขต</label>
+                </p>
+                <input type="text" name="district" id="district">
+            </div>
+    
+            <div>
+                <p>
+                    <label for="province">จังหวัด</label>
+                </p>
+                <input type="text" name="province" id="province">
+            </div>
+    
+            <div>
+                <p>
+                    <label for="postcode">รหัสไปรษณีย์</label>
+                </p>
+                <input type="text" name="postcode" id="postcode">
+            </div> -->
+
+        </div>
+
+        <!-- </p> -->
+        <!-- <button>Submit</button> -->
+
+
+    </form>
+</body>
+
+</html>
+
+
+
+<!-- ลำดับ รายการ ลักษณะของข้อมูล -->
+<!-- 1	หมายเลขบัตรประชาชน	เป็นตัวเลข จำนวน 13 หลัก -->
+<!-- 2 คำนำหน้านาม นาย นาง นางสาว เด็กชาย เด็กหญิง -->
+<!-- 3 ชื่อ เป็นตัวอักษร ความยาวระหว่าง 2-20 ตัวอักษร
+4 นามสกุล เป็นตัวอักษร ความยาวระหว่าง 2-30 ตัวอักษร -->
+<!-- 5 ที่อยู่ ความยาวไม่ต่ำกว่า 15 ตัวอักษร -->
+<!-- 6 ตำบล/แขวง เป็นตัวอักษร ความยาวไม่ต่ำกว่า 2 ตัวอักษร -->
+<!-- 7 อำเภอ/เขต เป็นตัวอักษร ความยาวไม่ต่ำกว่า 2 ตัวอักษร
+8 จังหวัด เป็นตัวอักษร ผู้ใช้เลือกได้จากรายชื่อจังหวัด
+9 รหัสไปรษณีย์ เป็นตัวเลข จำนวน 5 หลัก -->
