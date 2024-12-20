@@ -1,0 +1,89 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href=""> -->
+    <title>Lab3.3</title>
+
+    <style>
+        div .subject {
+            margin-bottom: 3px;
+            width: 100px;
+            background-color: aqua;
+        }
+
+        div .center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 25%;
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="center">
+        <div>
+            <div class="subject" id="Math">Math</div>
+        </div>
+
+        <div>
+            <div class="subject" id="Thai">Thai</div>
+        </div>
+
+        <div>
+            <div class="subject" id="English">English</div>
+        </div>
+
+        <div>
+            <div class="subject" id="Science">Science</div>
+        </div>
+
+        <div>
+            <div class="subject" id="Social">Social</div>
+        </div>
+        <button onclick="chart()">click</button>
+    </div>
+
+    <script>
+
+        let check = 0;
+        function chart() {
+            const MathId = document.getElementById("Math");
+            const ThaiId = document.getElementById("Thai");
+            const EngId = document.getElementById("English");
+            const SciId = document.getElementById("Science");
+            const SocialId = document.getElementById("Social");
+            if (check == 0) {
+                MathId.style.width = "75px";
+                ThaiId.style.width = "100px";
+                EngId.style.width = "60px";
+                SciId.style.width = "40px";
+                SocialId.style.width = "80px";
+                check = 1;
+            }
+            else {
+                MathId.style.width = "100px";
+                ThaiId.style.width = "100px";
+                EngId.style.width = "100px";
+                SciId.style.width = "100px";
+                SocialId.style.width = "100px";
+                check = 0;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
