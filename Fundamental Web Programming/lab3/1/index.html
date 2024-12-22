@@ -6,13 +6,18 @@
     <title>Lab3-3</title>
     <style>
         div {
-            border-style: solid;
-            border-color: cadetblue;
+            /* border-style: solid;
+            border-color: aliceblue; */
+            background-color: #c8d8e4;
         }
 
         input {
             width: 100%;
             font-size: 20px;
+            border: none;
+            /* border-style: solid;
+            border-width: 1px; */
+            border-radius: 12px;
         }
 
         label {
@@ -25,31 +30,44 @@
             align-items: center;
             justify-content: center;
         }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        button {
+            background-color: cadetblue;
+            border: none;
+            width: 120px;
+            height: 50px;
+            border-radius: 45px;
+            /* font-weight: bold; */
+            font-size: 20px;
+
+            margin-top: 9px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
-<body style="background-color: cadetblue">
-    <div>
+<body style="background-color: #c8d8e4">
+    <div class="container">
         <div>
             <label for="ID">หมายเลขบัตรประชาชน</label>
             <input type="text" name="ID" class="ID">
         </div>
-
-        <div><br></div>
 
         <div>
             <label for="prefix">คำนำหน้านาม</label>
             <input type="text" name="prefix" id="prefix">
         </div>
 
-        <div><br></div>
-
         <div>
             <label for="fName">ชื่อ</label>
             <input type="text" name="fName" id="fName">
         </div>
-
-        <div><br></div>
 
         <div>
             <label for="lName">นามสกุล</label>
@@ -57,39 +75,39 @@
         </div>
 
         <div>
-            <label for=""></label>
+            <label for="">ที่อยู่</label>
             <input type="text" name="" id="">
         </div>
 
         <div>
-            <label for=""></label>
+            <label for="">ตำบล</label>
             <input type="text" name="" id="">
         </div>
 
         <div>
-            <label for=""></label>
+            <label for="">อำเภอ</label>
             <input type="text" name="" id="">
         </div>
 
         <div>
-            <label for=""></label>
+            <label for="">จังหวัด</label>
             <input type="text" name="" id="">
         </div>
 
         <div>
-            <label for=""></label>
+            <label for="">รหัสไปรษณีย์</label>
             <input type="text" name="" id="">
+        </div>
+
+        <div class="center">
+            <button>
+                Submit
+            </button>
+
         </div>
 
     </div>
-    <div>
-        <label for=""></label>
-        <input type="text" name="" id="">
-    </div>
+
 </body>
-<div>
-    <label for=""></label>
-    <input type="text" name="" id="">
-</div>
 
 </html>
