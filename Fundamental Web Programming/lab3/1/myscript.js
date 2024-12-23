@@ -2,8 +2,8 @@ function submitForm() {
     // ID
 
     let id = document.getElementById("ID").value;
-    if (id.length < 13) {
-        alert("กรอกเลขบัตรประชาชนให้ครบด้วยเพื่อน");
+    if (id.length != 13) {
+        alert("เลขบัตรประชาชนต้องมี 13 หลักเท่านั้นนะเพื่อน");
         return false;
     }
 
@@ -37,13 +37,13 @@ function submitForm() {
     }
 
     let sdistrict = document.getElementById("subdistrict").value;
-    if (sdistrict.length < 3 ) {
+    if (sdistrict.length < 2 ) {
         alert("พี่ลืมใส่ตำบลค่ะ");
         return false;
     }
 
     let district = document.getElementById("district").value;
-    if (district.length < 3 ) {
+    if (district.length < 2 ) {
         alert("พี่ลืมใส่อำเภอค่ะ");
         return false;
     }
@@ -55,7 +55,7 @@ function submitForm() {
     }
 
     let postcode = document.getElementById("postcode").value;
-    if (postcode.length < 5) {
+    if (postcode.length != 5) {
         alert("รหัสไปรษณีย์ต้องเป็นตัวเลข 5 หลักเน้อเจ้า");
         return false;
     }
