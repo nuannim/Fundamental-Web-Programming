@@ -1,0 +1,65 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamental Web Programming Lab3-2</title>
+<style>
+    .lesson{
+        margin-right: 3px;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 25%;
+        height: 100%;
+    }
+    main div{
+        display: flex;
+        flex-direction: row;
+    }
+    button{
+        width: 100px;
+    }
+    img{
+        width: 100px;
+    }
+</style></head>
+
+<body>
+    <main>
+        <div>
+        <div class="lesson bg-primary"><img src="http://10.0.15.21/lab/lab3/images/1.png" alt="" id="n1"></div>
+        <div class="lesson bg-primary"><img src="http://10.0.15.21/lab/lab3/images/2.png" alt="" id="n2"></div>
+        <div class="lesson bg-primary"><img src="http://10.0.15.21/lab/lab3/images/3.png" alt="" id="n3"></div>
+        <div class="lesson bg-primary"><img src="http://10.0.15.21/lab/lab3/images/4.png" alt="" id="n4"></div>
+        <div class="lesson bg-primary"><img src="http://10.0.15.21/lab/lab3/images/5.png" alt="" id="n5"></div>
+        <div class="lesson bg-primary"><img src="http://10.0.15.21/lab/lab3/images/6.png" alt="" id="n6"></div>
+    </div>
+    <button class="btn btn-dark" onclick="barchart()">click</button>
+    </main>
+
+<script>
+    const im1 = document.getElementById("n1");
+    const im2 = document.getElementById("n2");
+    const im3 = document.getElementById("n3");
+    const im4 = document.getElementById("n4");
+    const im5 = document.getElementById("n5");
+    const im6 = document.getElementById("n6");
+    function barchart(){
+        array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+        im1.src = "i"+array[Math.floor(Math.random()*10)]+".png"
+        im2.src = "i"+array[Math.floor(Math.random()*10)]+".png"
+        im3.src = "i"+array[Math.floor(Math.random()*10)]+".png"
+        im4.src = "i"+array[Math.floor(Math.random()*10)]+".png"
+        im5.src = "i"+array[Math.floor(Math.random()*10)]+".png"
+        im6.src = "i"+array[Math.floor(Math.random()*10)]+".png"
+    }
+</script>
+</body></html>

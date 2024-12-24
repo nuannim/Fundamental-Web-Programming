@@ -1,0 +1,29 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>2</title>
+</head>
+<body>
+    <div class="coim" id="coim"><img src="0.png" alt="random" style="width: 100px; height: auto;"> <img src="8.png" alt="random" style="width: 100px; height: auto;"> <img src="2.png" alt="random" style="width: 100px; height: auto;"> <img src="3.png" alt="random" style="width: 100px; height: auto;"> <img src="9.png" alt="random" style="width: 100px; height: auto;"> <img src="4.png" alt="random" style="width: 100px; height: auto;"></div>
+    <button class="btn" onclick="help()">create</button>
+    <script>
+        const images = ['<img src="1.png" alt="random" style="width: 100px; height: auto;">', '<img src="2.png" alt="random" style="width: 100px; height: auto;">', '<img src="3.png" alt="random" style="width: 100px; height: auto;">', '<img src="4.png" alt="random" style="width: 100px; height: auto;">', '<img src="5.png" alt="random" style="width: 100px; height: auto;">', '<img src="6.png" alt="random" style="width: 100px; height: auto;">', '<img src="7.png" alt="random" style="width: 100px; height: auto;">', '<img src="8.png" alt="random" style="width: 100px; height: auto;">', '<img src="9.png" alt="random" style="width: 100px; height: auto;">', '<img src="0.png" alt="random" style="width: 100px; height: auto;">'];
+        function getim(arr){
+            const selim = new Set();
+
+            while (selim.size < 6){
+                const randomim = Math.floor(Math.random()*arr.length);
+                selim.add(arr[randomim]);
+            }
+
+            return Array.from(selim);
+        }
+        function help(){
+            const randomimg = getim(images);
+            document.getElementById("coim").innerHTML = randomimg.join(' ');
+        }
+        help();
+    </script>
+
+</body></html>

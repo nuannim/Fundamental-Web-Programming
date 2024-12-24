@@ -1,0 +1,74 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab3-2</title>
+
+    <style>
+        div {
+            /* border-style: solid; */
+            /* border-width: 3px; */
+            /* border: none; */
+
+            gap: 10px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+        }
+
+        img {
+            width: 10%;
+        }
+
+        body {
+            display: inline-flex;
+            flex-direction: column;
+            /* align-items: center; */
+            justify-content: center;
+            height: 100%;
+            margin: 0;
+
+            gap: 10px;
+        }
+
+        button {
+            height: 8vh;
+            width: 16vh;
+            font-size: 3vh;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <img src="http://10.0.15.21/lab/lab3/images/1.png" alt="" id="img1">
+        <img src="http://10.0.15.21/lab/lab3/images/2.png" alt="" id="img2">
+        <img src="http://10.0.15.21/lab/lab3/images/3.png" alt="" id="img3">
+        <img src="http://10.0.15.21/lab/lab3/images/4.png" alt="" id="img4">
+        <img src="http://10.0.15.21/lab/lab3/images/5.png" alt="" id="img5">
+        <img src="http://10.0.15.21/lab/lab3/images/6.png" alt="" id="img6">
+    </div>
+    <div>
+        <button onclick="display()">Shuffle</button>
+    </div>
+</body>
+
+<script>
+    function display() {
+        let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        for (let i = 1; i <= 7; i++) {
+            let random = numbers[Math.floor(Math.random() * numbers.length)];
+            document.getElementById(`img${i}`).src = `http://10.0.15.21/lab/lab3/images/${random}.png`;            
+        }
+
+        // let random = numbers[Math.floor(Math.random() * numbers.length)];
+        // document.getElementById('img1').src = "http://10.0.15.21/lab/lab3/images/"+ random + ".png";
+        
+            // document.getElementById('img1').src = `http://10.0.15.21/lab/lab3/images/${random}.png`;
+    }
+</script>
+</html>
