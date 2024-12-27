@@ -1,0 +1,62 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamental Web Programming Lab4-1</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            height: 90vh;
+            flex-direction: column;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>Number 1:
+        <input type="number" id="fnum">
+    </div>
+
+    <div>Number 2:
+        <input type="number" id="lnum">
+    </div>
+
+    <button id="cal" onclick="calcu()">Calculate</button>
+
+    <div id="result">
+        <h3>Result: <span id="sum"></span></h3>
+    </div>
+
+    <div>
+        <div id="calhistory"></div>
+    </div>
+
+    <script>
+        let numf = document.getElementById('fnum');
+        let numl = document.getElementById('lnum');
+        let calculate = document.getElementById('cal');
+        let resu = document.getElementById('sum');
+        let history = document.getElementById('calhistory');
+
+
+        function calcu() {
+            let num1 = parseFloat(numf.value);
+            let num2 = parseFloat(numl.value);
+            let numsum = num1 + num2;
+            resu.textContent = numsum;
+
+            let historyItem = document.createElement('div');
+            historyItem.className = 'calculation';
+            historyItem.textContent = `${num1} + ${num2} = ${numsum}`;
+            history.insertBefore(historyItem, history.firstChild);
+        }
+    </script>
+
+</body>
+
+</html>
