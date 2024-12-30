@@ -1,0 +1,60 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Months in a Year</h1>
+    <p>
+        According to the Gregorian calendar of modern time, there are 12 months in a year. Each month has either 30 or
+        31 days, except for one month of February which has 28 or 29 days, depending on the year being a leap year.
+        Observe the name given below which shows the list of all the 12 months in a year. <a href="#"
+            onclick="listOfMonths();">click here</a>
+    </p>
+
+    <p id="pmonths"></p>
+
+    <h1>How to Remember the Days of a Month?</h1>
+    <p>
+        The number of days in a month need to be memorized. We should keep in mind that we have months with 31 days,
+        months with 30 days, and a month which has 28 or 29 days. The following method helps us remember these months
+        along with the number of days that they have.
+    </p>
+
+
+    <script>
+
+        const months = ["January", "February",
+            "March", "April",
+            "May", "June",
+            "July", "August",
+            "September", "October",
+            "November", "December"];
+
+        /* list of monts ต้องเขียนใน html แบบนี้
+            <ol>
+                <li>January</li>
+                <li>February</li>
+            </ol>
+        */
+
+        let ol = document.createElement("ol");
+
+        for (let item of months) {
+            let li = document.createElement("li");
+            let txt = document.createTextNode(item);
+            li.appendChild(txt);
+
+            ol.appendChild(li);
+        }
+
+        document.getElementById("pmonths").appendChild(ol);
+
+    </script>
+</body>
+
+
+</html>
