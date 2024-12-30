@@ -1,0 +1,83 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            /* gap: 20px; */
+            /* margin-top: 20vh; */
+
+        }
+
+        div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+
+            /* border-style: solid; */
+            /* height: 50%; */
+            /* width: 50%; */
+        }
+
+        .subscribe-button {
+            background-color: rgb(192, 70, 70);
+            border: none;
+            width: 160px;
+            height: 70px;
+            border-radius: 4px;
+            /* font-weight: bold; */
+            font-size: 20px;
+
+            color: white;
+
+            /* margin-top: 9px; */
+            cursor: pointer;
+        }
+
+        .subscribe-button:hover {
+            opacity: 0.8;
+        }
+
+        .subscribe-button:active {
+            opacity: 0.5;
+        }
+
+        .click-button {
+            color: rgb(82, 174, 255);
+            border-color: rgb(82, 174, 255);
+            border-style: solid;
+            background: none;
+
+            height: 70px;
+            width: 130px;
+            font-size: 20px;
+            border-radius: 35px;
+        }
+
+        .click-button:hover {
+            color: white;
+            /* border-color: white; */
+            background-color: rgb(82, 174, 255);
+        }
+
+        .click-button:active {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button class="subscribe-button">SUBSCRIBE</button>
+        <button class="click-button">Click</button>
+    </div>
+</body>
+
+</html>
