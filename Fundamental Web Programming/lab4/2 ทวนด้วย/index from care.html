@@ -1,0 +1,87 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab 4/2</title>
+</head>
+<body>
+    <form>
+        <p id="p1">
+            <label id="nam" for="name">ชื่อ:</label>
+            <input id="nin" type="text">
+        </p>
+        <p id="p2">
+            <label id="las" for="last">นามสกุล:</label>
+            <input id="lin" type="text">
+        </p>
+        <p id="p3">
+            <label id="cou" for="coun">ประเทศ:</label>
+            <select name="coun" id="coun">
+                <option value="" selected="">เลือกประเทศ</option>
+                <option value="">ไทย</option>
+                <option value="">เวียดนาม</option>
+                <option value="">ลาว</option>
+                <option value="">มาเลย์เซีย</option>
+                <option value="">สิงคโปร์</option>
+                <option value="">ฟิลิปปินส์</option>
+                <option value="">เมียนมาร์</option>
+                <option value="">กัมพูชา</option>
+                <option value="">บรูไน</option>
+            </select>
+        </p>
+        <button id="btn" type="button" onclick="changelanguage()">เปลี่ยนเป็นภาษาอังกฤษ</button>
+    </form>
+
+    <script>
+        let sta = 0;
+        function changelanguage(){
+            let name = document.getElementById("nam");
+            let last = document.getElementById("las");
+            let country = document.getElementById("cou");
+            let countrys = document.getElementById("coun");
+            let btn = document.getElementById("btn");
+
+            const countryen = ["Select a country", "Thailand", "Vietnam", "Laos", "Malaysia", "Singapore", "Philippines", "Myanmar", "Cambodia", "Brunei"];
+            const countryth = ["เลือกประเทศ", "ไทย", "เวียดนาม", "ลาว", "มาเลย์เซีย", "สิงคโปร์", "ฟิลิปปินส์", "เมียนมาร์", "กัมพูชา", "บรูไน"];
+            
+            if(sta==0){
+                name.textContent = "First Name: ";
+                last.textContent = "Last Name: ";
+                country.textContent = "Country: ";
+                btn.textContent = "Change to Thai";
+
+                while (countrys.firstChild){
+                    countrys.removeChild(countrys.firstChild);
+                }
+
+                for(let item of countryen){
+                    let op = document.createElement("option");
+                    let txt = document.createTextNode(item);
+                    op.appendChild(txt);
+                    countrys.appendChild(op);
+                }
+
+                sta = 1;
+            }
+            else{
+                name.textContent = "ชื่อ: ";
+                last.textContent = "นามสกุล: ";
+                country.textContent = "ประเทศ: ";
+                btn.textContent = "เปลี่ยนเป็นภาษาอังกฤษ";
+
+                while (countrys.firstChild){
+                    countrys.removeChild(countrys.firstChild);
+                }
+
+                for(let item of countryth){
+                    let op = document.createElement("option");
+                    let txt = document.createTextNode(item);
+                    op.appendChild(txt);
+                    countrys.appendChild(op);
+                }
+
+                sta = 0;
+            }
+        }
+    </script>
+
+</body></html>

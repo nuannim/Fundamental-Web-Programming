@@ -1,0 +1,99 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamental Web Programming Lab4-2</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      main {
+        text-align: start;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <form>
+        <div>
+          <div id="fname">First Name:</div>
+          <input type="text">
+        </div>
+        <div>
+          <div id="lname">Last Name:</div>
+          <input type="text">
+        </div>
+        <div>
+          <div id="country">Country:</div>
+          <select id="selecting">
+            <option>Select country</option>
+            <option>Thailand</option>
+            <option>Vietnam</option>
+            <option>Laos</option>
+            <option>Malaysia</option>
+            <option>Singapore</option>
+            <option>Philippines</option>
+            <option>Myanmar</option>
+            <option>Cambodia</option>
+            <option>Brunei</option>
+          </select>
+        </div>
+        <button type="button" id="change" onclick="changing()">Change to Thai</button>
+      </form>
+    </main>
+  
+   
+  
+  <script>
+      const fistname = document.getElementById('fname');
+      const lastname = document.getElementById('lname');
+      const countrysel = document.getElementById('selecting');
+      const countrylist = document.getElementById('country');
+      const langchange = document.getElementById('change');
+  
+      let current = 'th';
+  
+      function changing() {
+        
+        if(current == 'th'){
+          current = 'en'
+        }
+        else{
+          current = 'th'
+        }
+      
+        const currentchange = {
+          en: {
+            fn: 'First Name:',
+            ln: 'Last Name:',
+            country: 'Country:',
+            button: 'Change to Thai',
+            options: ['Select country','Thailand','Vietnam','Laos','Malaysia','Singapore','Philippines','Myanmar','Cambodia','Brunei'],
+          },
+          th: {
+            fn: 'ชื่อ:',
+            ln: 'นามสกุล:',
+            country: 'ประเทศ:',
+            button: 'เปลี่ยนเป็นภาษาอังกฤษ',
+            options: ['เลือกประเทศ','ไทย','เวียดนาม','ลาว','มาเลเซีย','สิงคโปร์','ฟิลิปปินส์','เมียนมา','กัมพูชา','บรูไน'],
+          }
+        };
+  
+        fistname.textContent = currentchange[current].fn;
+        lastname.textContent = currentchange[current].ln;
+        countrylist.textContent = currentchange[current].country;
+        langchange.textContent = currentchange[current].button;
+  
+  
+        const options = countrysel.children;
+        currentchange[current].options.forEach((text, index) => {
+          options[index].textContent = text;
+        });
+      }
+  
+    </script>
+  
+  </body></html>
