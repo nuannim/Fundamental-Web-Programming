@@ -1,0 +1,85 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-Size: 24px;
+        }
+
+        img {
+            border-radius: 25px;
+            border: 10px solid red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Top Programming Languages 2024</h1>
+    <p>According to a 2024 Stack Overflow Developer Survey, the most popular programming languages in 2024 are:</p>
+    <div id="div1">
+        <p id="p1">JavaScript</p>
+        <p id="p2">HTML/CSS</p>
+        <p id="p3">Python</p>
+        <p id="p4">SQL</p>
+        <p id="p5">TypeScript</p>
+        <p id="p6">Bash/Shell</p>
+        <!-- add a new element here -->
+    </div>
+
+    <div id="div2">
+        <h1 id="h1md">Moo Deng, the irresistible star</h1>
+        <p>Moo Deng is a pygmy hippopotamus living in Khao Kheow Open Zoo in Si Racha, Chonburi, Thailand. She became a
+            popular internet meme at two months of age after images of her went viral online in September 2024. </p>
+    </div>
+
+
+    <button type="button" onclick="addNode();">Add Node</button>
+    <button type="button" onclick="deleteNode();">Delete Node</button>
+    <button type="button" onclick="addNewImage();">Add Image</button>
+    <button type="button" onclick="changeStyles();">Change Styles</button>
+    <script>
+        function addNode() {
+            // 1. <p>Java</p>
+            let pt4 = document.createElement("p");
+            // 2. create text node 
+            let txt = document.createTextNode("Java");
+            // 3. append text node to a parent node
+            // 4. select a parent node            
+            let parent1 = document.getElementById("div1");
+            // 5. append element node to a parent node
+
+            /*  uncomment in step 2 **/
+            // let childP1 = document.getElementById("p1");
+            // parent1.insertBefore(pt4, childP1);                       
+        }
+
+        function deleteNode() {
+            let parent2 = document.getElementById("div1");
+            let delPtag = document.getElementById("p1");
+            parent2.removeChild(delPtag);
+        }
+
+        function addNewImage() {
+            // <img src="http://10.0.15.21/lab/lab3/images/md2.png">
+            let imgtag = document.createElement("img");
+
+            imgtag.setAttribute('src', 'http://10.0.15.21/lab/lab3/images/md2.png');
+
+            // add IMG to parent node                                               
+        }
+
+        function changeStyles() {
+            let p = document.getElementById("pid");
+            p.style.color = "blue";
+            p.style.fontFamily = "Comic Sans MS";
+
+        }
+    </script>
+</body>
+
+</html>
