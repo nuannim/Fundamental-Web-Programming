@@ -1,0 +1,115 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://10.0.15.21/lab/bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <title>lab 4/3</title>
+    <style>
+        *{
+            font-family: "Kanit";
+        }
+        #top{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        #mid{
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        #bot{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+        #btn{
+            color: aliceblue;
+            background-color:#2ea44f;
+            border-radius: 5px;
+            border: 0;
+        }
+        table{
+            width: 600px;
+        }
+        thead{
+            color: aliceblue;
+            background-color: lightseagreen;
+            border: 1px solid lightgrey;
+        }
+        tbody, tr, th, td{
+            border: 1px solid lightgrey;
+        }
+    </style>
+</head>
+<body>
+    <div id="top">
+        <h1>ตารางรายรับ-รายจ่าย</h1>
+        <h4>ยอดคงเหลือ</h4>
+        <h1 id="bal">0</h1>
+    </div>
+    <form id="mid">
+        <input type="text" id="item" placeholder="รายการ">
+        <input type="text" id="amo" placeholder="จำนวน">
+        <select name="dc" id="dc">
+            <option value="exp" id="exp">รายจ่าย</option>
+            <option value="inc" id="inc">รายรับ</option>
+        </select>
+        <input type="date" name="cal" id="cal" value="value">
+        <button id="btn" onclick="add(event)">เพิ่มรายการ</button>
+    </form>
+    <div id="bot">
+        <table>
+            <thead>
+                <tr>
+                    <th>วันที่</th>
+                    <th>รายการ</th>
+                    <th>รายรับ</th>
+                    <th>รายจ่าย</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+    </div>
+    <script>
+        let bala = 0;
+        function add(event){
+            event.preventDefault();
+            let tr = document.createElement("tr");
+            let td1 = document.createElement("td");
+            let td2 = document.createElement("td");
+            let td3 = document.createElement("td");
+            let td4 = document.createElement("td");
+
+            let calen = document.getElementById("cal").value;
+            let item = document.getElementById("item").value;
+            let amo = document.getElementById("amo").value;
+            let dc = document.getElementById("dc").value;
+            
+            td1.textContent = calen;
+            td2.textContent = item;
+            
+            if(dc == "inc"){
+                td3.textContent = amo;
+                td4.textContent = "0";
+                bala += parseInt(amo);
+            }
+            else{
+                td3.textContent = "0";
+                td4.textContent = amo;
+                bala -= parseInt(amo);
+
+            }
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            tr.appendChild(td4);
+            document.getElementById("tbody").appendChild(tr);
+            document.getElementById("bal").textContent = bala;
+        }
+    </script>
+    <script src="http://10.0.15.21/lab/bootstrap/js/bootstrap.min.js"></script>
+
+</body></html>

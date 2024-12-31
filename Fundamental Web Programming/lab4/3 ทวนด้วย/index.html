@@ -1,0 +1,117 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        div {
+            border: solid;
+        }
+
+        input {
+            margin: 10px;
+            font-size: 20px;
+        }
+
+        select {
+            font-size: 20px;
+        }
+
+        button {
+            font-size: 20px;
+            background-color: green;
+            border-radius: 5px;
+            color: white;
+
+            border-color: green;
+
+            border-style: solid;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        button:active {
+            opacity: 0.5;
+        }
+
+        table {
+            width: 500px;
+        }
+
+        thead {
+            color: white;
+            background-color: rgb(3, 163, 3);
+            /* border-radius: 1000px; */
+        }
+
+        tr,
+        th,
+        tbody {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>
+            <h1>ตารางรายรับ-รายจ่าย</h1>
+        </div>
+
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <h2>ยอดคงเหลือ:</h2>
+            <h1 id="balance" name="balance">0</h>
+        </div>
+    </div>
+
+    <div>
+        <input type="text" name="item" id="item" placeholder="รายการ">
+        <input type="text" name="amount" id="item" placeholder="จำนวน">
+
+        <select name="" id="">
+            <option value="income">รายรับ</option>
+            <option value="outcome">รายจ่าย</option>
+        </select>
+
+        <input type="date" name="date" id="date">
+
+        <button>เพิ่มรายการ</button>
+
+        <div style="display: flex; justify-content: center;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>วันที่</th>
+                        <th>รายการ</th>
+                        <th>รายรับ</th>
+                        <th>รายจ่าย</th>
+                    </tr>
+                </thead>
+                <tbody id="table"></tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+    <script>
+
+    </script>
+</body>
+
+</html>

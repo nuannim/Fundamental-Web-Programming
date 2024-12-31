@@ -1,0 +1,148 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamental Web Programming Lab4-3</title>
+    <style>
+        body {
+            margin: 50px;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        .balance {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            width: 100%;
+            gap: 20px;
+            justify-content: center;
+            
+        }
+
+        form input, form select, form button {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        tr th{
+            background-color: rgb(24, 172, 24);
+            color: white;
+        }
+        table, th, td {
+            border: 1px solid #000000;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #000000;
+        }
+        button{
+            background-color: rgb(0, 172, 0);
+            color: white;
+        }
+        .divtb{
+            display: flex;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>ตารางรายรับรายจ่าย</h1>
+    <div class="balance">
+        ยอดคงเหลือ: <span id="balance">0</span>
+    </div>
+
+    <form id="formvalue">
+        <input type="text" id="item" placeholder="รายการ">
+        <input type="number" id="amount" placeholder="จำนวน">
+        <select id="type">
+            <option value="income">รายรับ</option>
+            <option value="bought">รายจ่าย</option>
+        </select>
+        <input type="date" id="date">
+        <button type="submit">เพิ่มรายการ</button>
+    </form>
+<div class="divtb">
+    <table>
+    <thead>
+        <tr>
+            <th>วันที่</th>
+            <th>รายการ</th>
+            <th>รายรับ</th>
+            <th>รายจ่าย</th>
+        </tr>
+    </thead>
+    <tbody id="table">
+    </tbody>
+</table>
+</div>
+    
+ 
+
+<script>
+    const balanced = document.getElementById('balance');
+    const form = document.getElementById('formvalue');
+    const table = document.getElementById('table');
+    let balance = 0;
+
+    form.addEventListener('submit', function (event) {
+        
+        event.preventDefault();
+        
+        const list = document.getElementById('item').value;
+        const amount = parseFloat(document.getElementById('amount').value);
+        const type = document.getElementById('type').value;
+        const date = document.getElementById('date').value;
+
+
+        const tr = document.createElement('tr');
+        const tbdate = document.createElement('td');
+        const tbitem = document.createElement('td');
+        const tbincome = document.createElement('td');
+        const tbbuy = document.createElement('td');
+
+
+        tbdate.textContent = date;
+        tbitem.textContent = list;
+
+
+        if (type === 'income') {
+            tbincome.textContent = amount;
+            balance += amount;
+        } else {
+            tbbuy.textContent = amount;
+            balance -= amount;
+        }
+
+        tr.appendChild(tbdate);
+        tr.appendChild(tbitem);
+        tr.appendChild(tbincome);
+        tr.appendChild(tbbuy);
+        table.appendChild(tr);
+
+        balanced.textContent = balance;
+
+        form.reset();
+    });
+</script>
+
+</body></html>
