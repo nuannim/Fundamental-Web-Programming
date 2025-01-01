@@ -1,14 +1,26 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        rel="stylesheet">
+
+    <title>Lab4-3</title>
 
     <style>
+        * {
+            font-family: "Kanit";
+        }
+
         body {
             display: flex;
-            /* justify-content: center; */
             align-items: center;
             flex-direction: column;
         }
@@ -17,9 +29,9 @@
             font-size: 50px;
         }
 
-        div {
+        /* div {
             border: solid;
-        }
+        } */
 
         input {
             margin: 10px;
@@ -35,9 +47,7 @@
             background-color: green;
             border-radius: 5px;
             color: white;
-
             border-color: green;
-
             border-style: solid;
         }
 
@@ -51,18 +61,20 @@
 
         table {
             width: 500px;
+            border-collapse: collapse;
         }
 
         thead {
             color: white;
             background-color: rgb(3, 163, 3);
-            /* border-radius: 1000px; */
         }
 
         tr,
         th,
+        td,
         tbody {
             border: 1px solid black;
+            text-align: center;
         }
     </style>
 </head>
@@ -75,22 +87,22 @@
 
         <div style="display: flex; flex-direction: column; align-items: center;">
             <h2>ยอดคงเหลือ</h2>
-            <h1 id="balance" name="balance">0</h>
+            <h1 id="balance" name="balance">0</h1>
         </div>
     </div>
 
     <div>
         <input type="text" name="item" id="item" placeholder="รายการ">
-        <input type="text" name="amount" id="item" placeholder="จำนวน">
+        <input type="number" name="amount" id="amount" placeholder="จำนวน">
 
-        <select name="" id="">
+        <select name="type" id="type">
             <option value="income">รายรับ</option>
             <option value="outcome">รายจ่าย</option>
         </select>
 
         <input type="date" name="date" id="date">
 
-        <button>เพิ่มรายการ</button>
+        <button onclick="addTransaction()">เพิ่มรายการ</button>
 
         <div style="display: flex; justify-content: center;">
             <table>
@@ -104,13 +116,62 @@
                 </thead>
                 <tbody id="table"></tbody>
             </table>
-
         </div>
     </div>
 
-
     <script>
+        let balance = 0;
 
+        function addTransaction() {
+            // ดึงข้อมูลจากฟอร์ม
+            const item = document.getElementById("item").value;
+            const amount = parseFloat(document.getElementById("amount").value);
+            const type = document.getElementById("type").value;
+            const date = document.getElementById("date").value;
+
+            if (!item || isNaN(amount) || !date) {
+                alert("กรุณากรอกข้อมูลให้ครบถ้วน");
+                return;
+            }
+
+            // สร้างแถวในตาราง
+            const table = document.getElementById("table");
+            const row = document.createElement("tr");
+
+            const dateCell = document.createElement("td");
+            dateCell.textContent = date;
+
+            const itemCell = document.createElement("td");
+            itemCell.textContent = item;
+
+            const incomeCell = document.createElement("td");
+            const outcomeCell = document.createElement("td");
+
+            if (type === "income") {
+                incomeCell.textContent = amount.toFixed(2);
+                outcomeCell.textContent = "-";
+                balance += amount;
+            } else {
+                incomeCell.textContent = "-";
+                outcomeCell.textContent = amount.toFixed(2);
+                balance -= amount;
+            }
+
+            row.appendChild(dateCell);
+            row.appendChild(itemCell);
+            row.appendChild(incomeCell);
+            row.appendChild(outcomeCell);
+            table.appendChild(row);
+
+            // อัปเดตยอดคงเหลือ
+            document.getElementById("balance").textContent = balance.toFixed(2);
+
+            // ล้างฟอร์ม
+            document.getElementById("item").value = "";
+            document.getElementById("amount").value = "";
+            document.getElementById("type").value = "income";
+            document.getElementById("date").value = "";
+        }
     </script>
 </body>
 
