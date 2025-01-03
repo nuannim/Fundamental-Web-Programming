@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab5-2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            background-color: rgb(173, 188, 204);
+            font-family: "IBM Plex Sans Thai", serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .box {
+            width: 200px;
+            height: 330px;
+            background-color: white;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .info {
+            text-align: left;
+        }
+
+        img {
+            width: 170px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        #students {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .info p {
+            margin: 5px 0;
+        }
+
+        .info p#n {
+            font-weight: 600;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="students"></div>
+
+    <script>
+        function renderStudents(data) {
+            const studentsContainer = document.getElementById('students');
+            studentsContainer.innerHTML = '';
+
+            data.forEach((student, index) => {
+                const box = document.createElement('div');
+                box.className = 'box';
+
+                const img = document.createElement('img');
+                img.src = student.gender === 'Male' ? 'http://10.0.15.21/lab/lab5/images/img_male.png' : 'http://10.0.15.21/lab/lab5/images/img_female.png';
+
+                const info = document.createElement('div');
+                info.className = 'info';
+
+                const name = document.createElement('p');
+                name.id = 'n';
+                name.textContent = `${index + 1}. ${student.name}`;
+
+                const physics = document.createElement('p');
+                physics.textContent = `Physics: ${student.physics}`;
+
+                const math = document.createElement('p');
+                math.textContent = `Mathematics: ${student.maths}`;
+
+                const english = document.createElement('p');
+                english.textContent = `English: ${student.english}`;
+
+                info.appendChild(name);
+                info.appendChild(physics);
+                info.appendChild(math);
+                info.appendChild(english);
+
+                box.appendChild(img);
+                box.appendChild(info);
+                studentsContainer.appendChild(box);
+            });
+        }
+
+        fetch('http://10.0.15.21/lab/lab5/json/student-score.json')
+            .then(response => response.json())
+            .then(data => renderStudents(data))
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab5/2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&amp;family=Concert+One&amp;family=Hind+Mysuru:wght@300;400;500;600;700&amp;family=Itim&amp;family=Marcellus&amp;family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;family=PT+Sans+Caption:wght@400;700&amp;family=Silkscreen:wght@400;700&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: "Afacad Flux", serif;
+            font-weight: 300;
+            font-style: normal;
+            display: flex;
+            margin: 20px;
+        }
+
+        #students {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .div1 {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 15px;
+            width: 220px;
+            text-align: center;
+        }
+
+        .div1 img {
+            width: 130px;
+            height: 130px;
+            margin-bottom: 10px;
+        }
+
+        .div1 h3,
+        .div1 p {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="students">
+        <div class="div1"><img src="http://10.0.15.21/lab/lab5/images/img_male.png">
+            <h3>1. Arun</h3>
+            <p>Physics: 88</p>
+            <p>Mathmatics: 87</p>
+            <p>English: 78</p>
+        </div>
+        <div class="div1"><img src="http://10.0.15.21/lab/lab5/images/img_male.png">
+            <h3>2. Rajesh</h3>
+            <p>Physics: 96</p>
+            <p>Mathmatics: 100</p>
+            <p>English: 95</p>
+        </div>
+        <div class="div1"><img src="http://10.0.15.21/lab/lab5/images/img_male.png">
+            <h3>3. Moorthy</h3>
+            <p>Physics: 89</p>
+            <p>Mathmatics: 90</p>
+            <p>English: 70</p>
+        </div>
+        <div class="div1"><img src="http://10.0.15.21/lab/lab5/images/img_male.png">
+            <h3>4. Raja</h3>
+            <p>Physics: 30</p>
+            <p>Mathmatics: 25</p>
+            <p>English: 40</p>
+        </div>
+        <div class="div1"><img src="http://10.0.15.21/lab/lab5/images/img_female.png">
+            <h3>5. Usha</h3>
+            <p>Physics: 67</p>
+            <p>Mathmatics: 45</p>
+            <p>English: 78</p>
+        </div>
+        <div class="div1"><img src="http://10.0.15.21/lab/lab5/images/img_female.png">
+            <h3>6. Priya</h3>
+            <p>Physics: 56</p>
+            <p>Mathmatics: 46</p>
+            <p>English: 78</p>
+        </div>
+        <div class="div1"><img src="http://10.0.15.21/lab/lab5/images/img_male.png">
+            <h3>7. Sundar</h3>
+            <p>Physics: 12</p>
+            <p>Mathmatics: 67</p>
+            <p>English: 67</p>
+        </div>
+        <div class="div1"><img src="http://10.0.15.21/lab/lab5/images/img_female.png">
+            <h3>8. Kavitha</h3>
+            <p>Physics: 78</p>
+            <p>Mathmatics: 71</p>
+            <p>English: 67</p>
+        </div>
+        <div class="div1"><img src="http://10.0.15.21/lab/lab5/images/img_male.png">
+            <h3>9. Dinesh</h3>
+            <p>Physics: 56</p>
+            <p>Mathmatics: 45</p>
+            <p>English: 67</p>
+        </div>
+        <div class="div1"><img src="http://10.0.15.21/lab/lab5/images/img_female.png">
+            <h3>10. Hema</h3>
+            <p>Physics: 71</p>
+            <p>Mathmatics: 90</p>
+            <p>English: 23</p>
+        </div>
+        <div class="div1"><img src="http://10.0.15.21/lab/lab5/images/img_female.png">
+            <h3>11. Gowri</h3>
+            <p>Physics: 100</p>
+            <p>Mathmatics: 100</p>
+            <p>English: 100</p>
+        </div>
+        <div class="div1"><img src="http://10.0.15.21/lab/lab5/images/img_male.png">
+            <h3>12. Ram</h3>
+            <p>Physics: 78</p>
+            <p>Mathmatics: 55</p>
+            <p>English: 47</p>
+        </div>
+        <div class="div1"><img src="http://10.0.15.21/lab/lab5/images/img_male.png">
+            <h3>13. Murugan</h3>
+            <p>Physics: 34</p>
+            <p>Mathmatics: 89</p>
+            <p>English: 78</p>
+        </div>
+        <div class="div1"><img src="http://10.0.15.21/lab/lab5/images/img_female.png">
+            <h3>14. Jenifer</h3>
+            <p>Physics: 67</p>
+            <p>Mathmatics: 88</p>
+            <p>English: 90</p>
+        </div>
+    </div>
+
+    <script>
+        function stu(data) {
+            let index = 0
+            for (let stu of data) {
+                let div1 = document.createElement('div');
+                div1.className = 'div1';
+                let pic = document.createElement('img');
+                let name = document.createElement('h3');
+                let phy = document.createElement('p');
+                let math = document.createElement('p');
+                let eng = document.createElement('p');
+
+
+                if (stu.gender == 'Male') {
+                    pic.src = 'http://10.0.15.21/lab/lab5/images/img_male.png';
+                } else {
+                    pic.src = 'http://10.0.15.21/lab/lab5/images/img_female.png';
+                }
+                name.textContent = (index + 1) + '. ' + stu.name;
+                phy.textContent = 'Physics: ' + stu.physics;
+                math.textContent = 'Mathmatics: ' + stu.maths;
+                eng.textContent = 'English: ' + stu.english;
+
+                div1.appendChild(pic);
+                div1.appendChild(name);
+                div1.appendChild(phy);
+                div1.appendChild(math);
+                div1.appendChild(eng);
+
+                document.getElementById('students').appendChild(div1);
+                index += 1
+            }
+
+
+        }
+
+        fetch('http://10.0.15.21/lab/lab5/json/student-score.json')
+            .then(response => response.json())
+            .then(data => stu(data))
+            .catch(error => console.log('error', error));
+    </script>
+
+
+</body>
+
+</html>
